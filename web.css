@@ -1,0 +1,203 @@
+/* ===== Oldschool (Win95-ish) Theme ===== */
+body {
+  margin: 0;
+  font-family: Tahoma, "MS Sans Serif", "Noto Sans Thai", system-ui, sans-serif;
+  background:
+    linear-gradient(#dcdcdc 1px, transparent 1px),
+    linear-gradient(90deg, #dcdcdc 1px, transparent 1px);
+  background-size: 8px 8px;
+  background-color: #c0c0c0;
+  color: #000000;
+}
+
+/* Classic link colors */
+a { color: #0000ee; text-decoration: underline; }
+a:visited { color: #551a8b; }
+a:focus { outline: 1px dotted #000; outline-offset: 2px; }
+
+header {
+  text-align: center;
+  padding: 12px 16px 8px;
+  color: #ffffff;
+  background: linear-gradient(#1f4aa8, #103781);
+  border-top: 2px solid #e6eefc;     /* bevel */
+  border-left: 2px solid #e6eefc;
+  border-right: 2px solid #0a2255;
+  border-bottom: 2px solid #0a2255;
+}
+
+header h1 {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+  font-weight: 700;
+}
+
+header p {
+  margin: 0;
+  color: #e5ecff;
+  font-size: 13px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+}
+
+/* Beveled panel */
+article {
+  background-color: #f5f5f5;
+  padding: 12px;
+  text-align: center;
+  max-width: 220px;
+
+  /* 3D bevel frame */
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #7a7a7a;
+  border-bottom: 2px solid #7a7a7a;
+  box-shadow: inset 1px 1px 0 #c9c9c9, inset -1px -1px 0 #c9c9c9;
+}
+
+article img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background-color: #ffffff;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #7a7a7a;
+  border-bottom: 2px solid #7a7a7a;
+}
+
+article h2 {
+  margin: 10px 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+article p {
+  margin: 0 0 10px;
+  color: #222222;
+  font-size: 13px;
+}
+
+/* Classic button (outset/inset) */
+article button {
+  font: 13px Tahoma, "MS Sans Serif", "Noto Sans Thai", sans-serif;
+  padding: 4px 10px;
+  cursor: pointer;
+  background: #e0e0e0;
+  color: #000;
+
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff; /* top/right/bottom/left */
+
+  box-shadow: inset 1px 1px 0 #cfcfcf, inset -1px -1px 0 #cfcfcf;
+}
+
+article button:hover {
+  background: #dcdcdc;
+}
+
+article button:active {
+  border-color: #404040 #ffffff #ffffff #404040; /* pressed */
+  background: #d0d0d0;
+}
+
+footer {
+  text-align: center;
+  color: #000000;
+  font-size: 12px;
+  padding: 12px 0;
+  background: #e3e3e3;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #7a7a7a;
+}
+
+/* ===== Modal Overlay (retro dialog) ===== */
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(96, 96, 96, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.overlay-box {
+  background-color: #e5e5e5;
+  max-width: 320px;
+  text-align: center;
+  padding: 0;
+
+  /* Dialog bevel */
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #7a7a7a;
+  border-bottom: 2px solid #7a7a7a;
+}
+
+/* Optional title bar look */
+.overlay-box::before {
+  content: "Information";
+  display: block;
+  text-align: left;
+  padding: 6px 10px;
+  color: #fff;
+  background: linear-gradient(#1f4aa8, #103781);
+  font-weight: 700;
+  font-size: 13px;
+
+  border-bottom: 2px solid #0a2255;
+}
+
+.overlay-box .overlay-content {
+  padding: 12px;
+}
+
+.overlay-box img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 8px;
+
+  background: #ffffff;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #7a7a7a;
+  border-bottom: 2px solid #7a7a7a;
+}
+
+.overlay-box a,
+.overlay-box button {
+  display: inline-block;
+  margin: 6px;
+  padding: 4px 12px;
+  text-decoration: none;
+  color: #000;
+
+  background: #e0e0e0;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  font: 13px Tahoma, "MS Sans Serif", "Noto Sans Thai", sans-serif;
+}
+
+.overlay-box a:hover,
+.overlay-box button:hover {
+  background: #dcdcdc;
+}
+
+.overlay-box a:active,
+.overlay-box button:active {
+  border-color: #404040 #ffffff #ffffff #404040;
+  background: #d0d0d0;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
